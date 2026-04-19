@@ -1,0 +1,59 @@
+/* ==========================================================================
+   GYM67 — Bootstrap Collision Overrides
+   Loaded LAST to neutralize Bootstrap class clashes.
+   Only targets elements where Bootstrap and custom GYM67 classes share
+   the same name. DO NOT add Bootstrap utility classes to existing elements.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   .nav — Bootstrap sets display:flex; flex-wrap:wrap on this class,
+   which corrupts the fixed-position nav layout. Reset to block.
+   -------------------------------------------------------------------------- */
+nav.nav {
+  display: block;
+  flex-wrap: unset;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  /* Re-assert critical positioning in case Bootstrap reboot interfered */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  z-index: 1050; /* Above Bootstrap's default z-indexes */
+}
+
+/* Bootstrap injects --bs-nav-link-color which can tint anchor tags inside nav */
+nav.nav {
+  --bs-nav-link-color: inherit;
+  --bs-nav-link-hover-color: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   .btn — Bootstrap adds border-radius, box-shadow, and transition overrides.
+   GYM67 buttons are intentionally sharp-cornered with a custom transition.
+   -------------------------------------------------------------------------- */
+.btn {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  --bs-btn-border-radius: 0;
+  --bs-btn-focus-box-shadow: none;
+}
+
+/* Bootstrap's .btn:focus adds an outline via box-shadow; restore our custom outline */
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  box-shadow: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   .container — Bootstrap's .container sets responsive max-widths with
+   breakpoint-specific overrides that may differ from GYM67's token.
+   -------------------------------------------------------------------------- */
+.container {
+  max-width: var(--container-max) !important;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}

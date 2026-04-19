@@ -1,0 +1,144 @@
+/* ==========================================================================
+   GYM67 — Product Detail Page Styles
+   ========================================================================== */
+
+/* ---- Product Layout ---- */
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--space-lg) 0 var(--space-3xl);
+}
+
+
+
+/* ---- Product Info ---- */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.product-info__category {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-ink-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.product-info__name {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 400;
+  margin-bottom: var(--space-md);
+}
+
+.product-info__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.product-info__review-count {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-ink-muted);
+}
+
+.product-info__price {
+  font-family: var(--font-body);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: var(--space-lg);
+}
+
+.product-info__desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--color-ink-muted);
+  margin-bottom: var(--space-xl);
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-info__section-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: var(--space-md);
+}
+
+.product-info__variants {
+  margin-bottom: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-info__qty-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.product-info__wishlist {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-ink-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-md) 0;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.product-info__wishlist:hover {
+  color: var(--color-ink);
+}
+
+/* ---- Product Detail Tabs ---- */
+.product-tabs {
+  padding: var(--space-2xl) 0 var(--space-3xl);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---- Related Products ---- */
+.related-products {
+  padding: var(--space-2xl) 0 var(--space-3xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.related-products__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .related-products__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .related-products__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

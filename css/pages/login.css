@@ -1,0 +1,192 @@
+/* ==========================================================================
+   GYM67 — Login / Register Page Styles
+   ========================================================================== */
+
+/* ---- Split Screen Layout ---- */
+.auth-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+}
+
+@media (min-width: 1024px) {
+  .auth-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---- Brand Panel (Left) ---- */
+.auth-brand {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-ink);
+}
+
+@media (min-width: 1024px) {
+  .auth-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.auth-brand__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+}
+
+.auth-brand__overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: var(--space-2xl);
+  max-width: 440px;
+}
+
+.auth-brand__quote {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 300;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: var(--space-lg);
+}
+
+.auth-brand__attribution {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ---- Form Panel (Right) ---- */
+.auth-form-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-md);
+  min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .auth-form-panel {
+    padding: var(--space-3xl) var(--space-2xl);
+  }
+}
+
+.auth-form-panel__inner {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-form-panel__logo {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  color: var(--color-ink);
+}
+
+/* ---- Tab Toggle (CSS-only) ---- */
+.auth-tabs {
+  position: relative;
+}
+
+.auth-tabs__input {
+  display: none;
+}
+
+.auth-tabs__nav {
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-xl);
+}
+
+.auth-tabs__label {
+  flex: 1;
+  text-align: center;
+  padding: var(--space-md) 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-ink-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out);
+}
+
+.auth-tabs__label:hover {
+  color: var(--color-ink);
+}
+
+#auth-login:checked ~ .auth-tabs__nav .auth-tabs__label[for="auth-login"] {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-ink);
+}
+
+#auth-register:checked ~ .auth-tabs__nav .auth-tabs__label[for="auth-register"] {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-ink);
+}
+
+/* Tab panels */
+.auth-tabs__panel {
+  display: none;
+}
+
+#auth-login:checked ~ .auth-tabs__panels .auth-tabs__panel--login {
+  display: block;
+}
+
+#auth-register:checked ~ .auth-tabs__panels .auth-tabs__panel--register {
+  display: block;
+}
+
+/* ---- Form Helpers ---- */
+.auth-form__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.auth-form__forgot {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-ink-muted);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.auth-form__forgot:hover {
+  color: var(--color-accent);
+}
+
+/* ---- Social Proof ---- */
+.auth-social-proof {
+  text-align: center;
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.auth-social-proof__text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-ink-muted);
+  line-height: 1.6;
+}
