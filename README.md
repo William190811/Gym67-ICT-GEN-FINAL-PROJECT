@@ -3,7 +3,7 @@ Gym67 offers high-quality equipment, apparel, and accessories to elevate every w
 
 **Tech Stack**
 
-- HTML5 + CSS3 (pure, no frameworks)
+- HTML5 (with boostrap) + CSS3 (pure, no frameworks)
 - PHP 8
 - MySQL (via XAMPP)
 - XAMPP (Apache + MySQL local server)
